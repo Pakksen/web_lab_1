@@ -1,0 +1,179 @@
+ <!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Отели</title>
+</head>
+<body>
+     <div>
+
+    <a href="#best-hotels-table">Лучшие отели</a>
+    <a href="#expensive-hotels">Самые дорогие страны</a>
+    <a href="#budget-hotels">Отели для экономных поездок по странам</a>
+    <a href="#popular-cities">Популярные города</a>
+    <a href="#average-grades">Средние оценки</a>
+    <a href="#hotels-by-reviews">Отели по отзывам</a>
+    </div>
+    </section>
+     <section id="content">
+        <h4>Отели</h4>
+        <table class="hotels-table">
+            <thead>
+                <tr>
+                    {% for item in hotel_head %}
+                        <th>{{ item }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in hotel_body %}
+                    <tr>
+                        {% for item in row %}
+                            <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div id="best-hotels-table">
+            <h4>Лучшие отели (рейтинг «Excellent»)</h4>
+            <table class="best-hotels-table">
+                <thead>
+                    <tr>
+                        {% for item in excellent_hotels_head %}
+                            <th>{{ item }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in excellent_hotels_body %}
+                        <tr>
+                            {% for item in row %}
+                                <td>{{ item }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button onclick="window.location.href='#'">Назад к началу</button>
+        </div>
+
+        <div id="expensive-hotels">
+            <h4>Самые дорогие страны (средняя цена)</h4>
+            <table class="expensive-hotels">
+                <thead>
+                    <tr>
+                        {% for item in avg_price_head %}
+                            <th>{{ item }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in avg_price_body %}
+                        <tr>
+                            {% for item in row %}
+                                <td>{{ item }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button onclick="window.location.href='#'">Назад к началу</button>
+        </div>
+
+        <div id="budget-hotels">
+            <h4>Самые дешёвые отели с рейтингом «Excellent» по странам</h4>
+            <table class="budget-hotels">
+                <thead>
+                    <tr>
+                        {% for item in cheapest_head %}
+                            <th>{{ item }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in cheapest_body %}
+                        <tr>
+                            {% for item in row %}
+                                <td>{{ item }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button onclick="window.location.href='#'">Назад к началу</button>
+        </div>
+
+        <div id="popular-cities">
+            <h4>Популярные города (по количеству отзывов)</h4>
+            <table class="popular-cities">
+                <thead>
+                    <tr>
+                        {% for item in reviewed_head %}
+                            <th>{{ item }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in reviewed_body %}
+                        <tr>
+                            {% for item in row %}
+                                <td>{{ item }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button onclick="window.location.href='#'">Назад к началу</button>
+        </div>
+
+        <div id="average-grades">
+            <h4>Средние оценки отелей по странам</h4>
+            <table class="average-grades">
+                <thead>
+                    <tr>
+                        {% for item in scores_head %}
+                            <th>{{ item }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in scores_body %}
+                        <tr>
+                            {% for item in row %}
+                                <td>{{ item }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button onclick="window.location.href='#'">Назад к началу</button>
+        </div>
+
+        <div id="hotels-by-reviews">
+            <h4>Отели по количеству отзывов (убывание)</h4>
+            <table class="hotels-by-reviews">
+                <thead>
+                    <tr>
+                        {% for item in reviews_head %}
+                            <th>{{ item }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in reviews_body %}
+                        <tr>
+                            {% for item in row %}
+                                <td>{{ item }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button onclick="window.location.href='#'">Назад к началу</button>
+        </div>
+    </section>
+</body>
+</html>
+
